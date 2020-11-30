@@ -893,7 +893,6 @@ impl Emit<'_, '_> {
     }
 
     fn memarg(&mut self, id: MemoryId, arg: &MemArg) {
-        assert_eq!(self.indices.get_memory_index(id), 0);
         self.encoder.u32(arg.align.trailing_zeros());
         self.encoder.u32(arg.offset);
     }
